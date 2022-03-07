@@ -2,7 +2,7 @@
 
 #### Please follow the below steps inorder to setup Azure Account.!
 #### 1. Redeem Azure Pass 
-#### 2. Open Azure CLI 
+#### 2. Open Azure Cloud Shell - Bash Prompt
 
 ##### Now Create Azure Contributor Service Principal for terraform Auth.
 
