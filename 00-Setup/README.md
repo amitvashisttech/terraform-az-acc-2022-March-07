@@ -35,7 +35,7 @@ export ARM_TENANT_ID="<<tenant>>"
 
 ### Initialize the Bashrc Variables
 ```
-source /root/.bashrc
+source ~/.bashrc
 ```
 
 ```
