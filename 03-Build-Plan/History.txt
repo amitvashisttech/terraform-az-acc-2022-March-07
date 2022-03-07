@@ -1,0 +1,26 @@
+```
+114  cd 02-First-Deployment/
+  115  ls
+  116  terraform plan 
+  117  terraform plan -target=example_rg_red
+  118  terraform plan -target="azurerm_resource_group.example_rg_red"
+  119  ls
+  120  cd ..
+  121  ls
+  122  cp -rf 02-First-Deployment 03-Build-Plan 
+  123  ls
+  124  cd 03-Build-Plan/
+  125  ls
+  126  terraform plan 
+  127  terraform apply 
+  128  terraform plan -out build-plan 
+  129  ls
+  130  file build-plan 
+  131  cat build-plan 
+  132  ls
+  133  terraform show build-plan 
+  134  terraform apply build-plan 
+  135  terraform  show 
+  136  terraform plan -destroy -out destroy-plan 
+  137  terraform apply destroy-plan 
+```
