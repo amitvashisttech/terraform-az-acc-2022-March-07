@@ -1,0 +1,35 @@
+```
+191  cp -rf 03-Build-Plan 05-Terraform-CLI
+  192  ls
+  193  cd 05-Terraform-CLI/
+  194  ls
+  195  terraform validate 
+  196  mv second_deployment.tf main.tf 
+  197  vim main.tf 
+  198  terraform validate 
+  199  vim main.tf 
+  200  ls
+  201  vim main.tf 
+  202  terraform validate 
+  203  vim main.tf 
+  204  terraform fmt
+  205  cat main.tf 
+  206  vim main.tf 
+  207  terraform fmt
+  208  cat main.tf 
+  209  terraform plan 
+  210  vim main.tf 
+  211  terraform plan 
+  212  terraform refresh 
+  213  terraform apply --auto-approve 
+  214  terraform show 
+  215  terraform refresh 
+  216  terraform show 
+  217  terraform refresh 
+  218  terraform show 
+  219  terraform plan 
+  220  terraform apply --auto-approve 
+  221  vim main.tf 
+  222  terraform plan 
+  223  terraform apply --auto-approve 
+```
