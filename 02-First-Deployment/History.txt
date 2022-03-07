@@ -1,0 +1,47 @@
+```
+46  cd terraform-az-acc-2022-March-07/
+   47  ls
+   48  mkdir 01-Authentication
+   49  vim 01-Authentication/README.md
+   50  ls
+   51  mkdir 02-First-Deployment
+   52  ls
+   53  cd 02-First-Deployment/
+   54  ls
+   55  vim first_deployment.tf 
+   56  ls
+   57  terraform apply 
+   58  ls -a 
+   59  terraform init 
+   60  ls -a 
+   61  cat .terraform.lock.hcl 
+   62  ls
+   63  ls -a 
+   64  cd .terraform/
+   65  ls
+   66  cd providers/
+   67  ls
+   68  cd registry.terraform.io/hashicorp/azurerm/2.98.0/linux_amd64/
+   69  ls
+   70  cd - 
+   71  cd ../../
+   72  ls
+   73  terraform plan 
+   74  terraform apply 
+   75  terraform  show 
+   76  terraform  destroy 
+   77  terraform  show 
+   78  terraform plan 
+   79  terraform apply --auto-approve 
+   80  ls
+   81  cat terraform.tfstate
+   82  ls
+   83  vim first_deployment.tf 
+   84  terraform apply --auto-approve 
+   85  vim first_deployment.tf 
+   86  terraform apply --auto-approve 
+   87  ls
+   88  cat terraform.tfstate
+   89  ls
+   90  terraform destroy  --auto-approve 
+```
