@@ -1,0 +1,590 @@
+    1  ls
+    2  git clone https://github.com/amitvashisttech/terraform-az-acc-2022-March-07.git
+    3  ls
+    4  cd terraform-az-acc-2022-March-07/
+    5  ls
+    6  cat README.md 
+    7  ls
+    8  ls -a 
+    9  mkdir 00-Setup 
+   10  ls
+   11  cd 00-Setup/
+   12  ls
+   13  vim README.md 
+   14  vim install-terraform.sh 
+   15  ls
+   16  terraform --version 
+   17  cat install-terraform.sh 
+   18  ls
+   19  cd ..
+   20  ls
+   21  cd 
+   22  ls
+   23  vim .bashrc 
+   24  ls
+   25  cd terraform-az-acc-2022-March-07/
+   26  ls
+   27  git add . ; git commit -m "00-Setup"; git push 
+   28  git config --global user.email "amitvashist7@outlook.com"
+   29  git config --global user.name "Amit Vashist"
+   30  git add . ; git commit -m "00-Setup"; git push 
+   31  git pull 
+   32  ls
+   33  az login 
+   34  az account list 
+   35  az account list --all 
+   36  az account list -o table 
+   37  az account set -s "30f23d1e-dc9a-4320-bef7-397a393db07a"
+   38  az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/30f23d1e-dc9a-4320-bef7-397a393db07a"
+   39  vim ~/.bashrc 
+   40  ls
+   41  source ~/.bashrc 
+   42  set | grep -i ARM 
+   43  vim .bashrc 
+   44  set | grep -i ARM 
+   45  ls
+   46  cd terraform-az-acc-2022-March-07/
+   47  ls
+   48  mkdir 01-Authentication
+   49  vim 01-Authentication/README.md
+   50  ls
+   51  mkdir 02-First-Deployment
+   52  ls
+   53  cd 02-First-Deployment/
+   54  ls
+   55  vim first_deployment.tf 
+   56  ls
+   57  terraform apply 
+   58  ls -a 
+   59  terraform init 
+   60  ls -a 
+   61  cat .terraform.lock.hcl 
+   62  ls
+   63  ls -a 
+   64  cd .terraform/
+   65  ls
+   66  cd providers/
+   67  ls
+   68  cd registry.terraform.io/hashicorp/azurerm/2.98.0/linux_amd64/
+   69  ls
+   70  cd - 
+   71  cd ../../
+   72  ls
+   73  terraform plan 
+   74  terraform apply 
+   75  terraform  show 
+   76  terraform  destroy 
+   77  terraform  show 
+   78  terraform plan 
+   79  terraform apply --auto-approve 
+   80  ls
+   81  cat terraform.tfstate
+   82  ls
+   83  vim first_deployment.tf 
+   84  terraform apply --auto-approve 
+   85  vim first_deployment.tf 
+   86  terraform apply --auto-approve 
+   87  ls
+   88  cat terraform.tfstate
+   89  ls
+   90  terraform destroy  --auto-approve 
+   91  ls
+   92  history 
+   93  ls
+   94  vim History.txt
+   95  cat first_deployment.tf 
+   96  ls
+   97  cp -rf first_deployment.tf second_deployment.tf 
+   98  ls
+   99  mv first_deployment.tf /root/
+  100  ls
+  101  mv first_deployment.tf ~/
+  102  ls
+  103  vim second_deployment.tf 
+  104  terraform plan 
+  105  vim second_deployment.tf 
+  106  terraform plan 
+  107  ls
+  108  cd ..
+  109  ls
+  110  git add . ; git commit -m "02-First-Deployment"; git push 
+  111  git pull 
+  112  git add . ; git commit -m "02-First-Deployment"; git push 
+  113  ls
+  114  cd 02-First-Deployment/
+  115  ls
+  116  terraform plan 
+  117  terraform plan -target=example_rg_red
+  118  terraform plan -target="azurerm_resource_group.example_rg_red"
+  119  ls
+  120  cd ..
+  121  ls
+  122  cp -rf 02-First-Deployment 03-Build-Plan 
+  123  ls
+  124  cd 03-Build-Plan/
+  125  ls
+  126  terraform plan 
+  127  terraform apply 
+  128  terraform plan -out build-plan 
+  129  ls
+  130  file build-plan 
+  131  cat build-plan 
+  132  ls
+  133  terraform show build-plan 
+  134  terraform apply build-plan 
+  135  terraform  show 
+  136  terraform plan -destroy -out destroy-plan 
+  137  terraform apply destroy-plan 
+  138  ls
+  139  history 
+  140  ls
+  141  vim History.txt 
+  142  ls
+  143  cd ..
+  144  ls
+  145  git add . ; git commit -m "02-First-Deployment"; git push 
+  146  ls
+  147  cd terraform-az-acc-2022-March-07/
+  148  ls
+  149  cp -rf 02-First-Deployment 04-Multi-Cloud 
+  150  ls
+  151  cd 04-Multi-Cloud/
+  152  ls
+  153  rm -rf .terraform*
+  154  ls
+  155  rm -rf History.txt terraform.tfstate* 
+  156  ls
+  157  mv second_deployment.tf main.tf 
+  158  ls
+  159  vim main.tf 
+  160  ls
+  161  cd terraform-az-acc-2022-March-07/
+  162  ls
+  163  cd terraform-az-acc-2022-March-07/
+  164  ls
+  165  cd 04-Multi-Cloud/
+  166  ls
+  167  ls -a 
+  168  vim main.tf 
+  169  ls
+  170  ls -a 
+  171  terraform init 
+  172  ls -R .terraform
+  173  ls
+  174  vim ~/.bashrc 
+  175  ls
+  176  source ~/.bashrc
+  177  set | grep -i AWS
+  178  ls
+  179  vim main.tf 
+  180  ls
+  181  terraform plan 
+  182  terraform apply --auto-approve 
+  183  terraform show 
+  184  terraform destroy -target="azurerm_resource_group.example_rg_red"
+  185  terraform destroy 
+  186  ls
+  187  cd ..
+  188  ls
+  189  git add . ; git commit -m "02-First-Deployment"; git push 
+  190  ls
+  191  cp -rf 03-Build-Plan 05-Terraform-CLI
+  192  ls
+  193  cd 05-Terraform-CLI/
+  194  ls
+  195  terraform validate 
+  196  mv second_deployment.tf main.tf 
+  197  vim main.tf 
+  198  terraform validate 
+  199  vim main.tf 
+  200  ls
+  201  vim main.tf 
+  202  terraform validate 
+  203  vim main.tf 
+  204  terraform fmt
+  205  cat main.tf 
+  206  vim main.tf 
+  207  terraform fmt
+  208  cat main.tf 
+  209  terraform plan 
+  210  vim main.tf 
+  211  terraform plan 
+  212  terraform refresh 
+  213  terraform apply --auto-approve 
+  214  terraform show 
+  215  terraform refresh 
+  216  terraform show 
+  217  terraform refresh 
+  218  terraform show 
+  219  terraform plan 
+  220  terraform apply --auto-approve 
+  221  vim main.tf 
+  222  terraform plan 
+  223  terraform apply --auto-approve 
+  224  ls
+  225  history 
+  226  vim History.txt 
+  227  ls
+  228  cd ..
+  229  ls
+  230  git add . ; git commit -m "05-Terraform-CLI"; git push 
+  231  ls
+  232  cd terraform-az-acc-2022-March-07/
+  233  ls
+  234  cd ls
+  235  ls
+  236  cp -rf 04-Multi-Cloud 06-Resources
+  237  ls
+  238  cd 06-Resources/
+  239  ls
+  240  vim main.tf 
+  241  ls
+  242  vim main.tf 
+  243  terraform apply --auto-approve 
+  244  vim main.tf 
+  245  terraform apply --auto-approve 
+  246  vim main.tf 
+  247  terraform apply --auto-approve 
+  248  vim main.tf 
+  249  terraform apply --auto-approve 
+  250  vim main.tf 
+  251  terraform apply --auto-approve 
+  252  ls
+  253  vim main.tf 
+  254  terraform plan 
+  255  vim main.tf 
+  256  terraform plan 
+  257  terraform apply --auto-approve 
+  258  terraform destroy  --auto-approve 
+  259  ls
+  260  vim main.tf 
+  261  terraform fmt 
+  262  terraform apply --auto-approve 
+  263  vim main.tf 
+  264  terraform destroy  --auto-approve 
+  265  ls
+  266  cat main.tf 
+  267  ls
+  268  cd ..
+  269  ls
+  270  cd ..
+  271  ls
+  272  cd terraform-az-acc-2022-March-07/
+  273  s
+  274  ls
+  275  git add . ; git commit -m "06-Resources"; git push 
+  276  ls
+  277  cd terraform-az-acc-2022-March-07/
+  278  ls
+  279  mkdir 07-AzureVM
+  280  ls
+  281  cd 07-AzureVM/
+  282  s
+  283  ls
+  284  vim provider.tf 
+  285  ;s
+  286  ls
+  287  mv provider.tf main.tf 
+  288  ls
+  289  cd terraform-az-acc-2022-March-07/
+  290  ls
+  291  cd 07-AzureVM/
+  292  ls
+  293  vim main.tf 
+  294  vim main.tf 
+  295  terraform init 
+  296  terraform plan 
+  297  terraform apply --auto-approve 
+  298  terraform show 
+  299  cat main.tf 
+  300  ssh testadmin@
+  301  ssh testadmin@10.0.2.4
+  302  terraform destroy --auto-approve 
+  303  ls
+  304  cd ..
+  305  ls
+  306  cd ..
+  307  ls
+  308  cd terraform-az-acc-2022-March-07/
+  309  s
+  310  ls
+  311  git add . ; git commit -m "07-AzureVM"; git push 
+  312  ls
+  313  cd 07-AzureVM/
+  314  ls
+  315  cd terraform-az-acc-2022-March-07/
+  316  ls
+  317  ls -ltr 
+  318  mkdir 08-Azure-VM-Public-IP
+  319  ls
+  320  cd 08-Azure-VM-Public-IP/
+  321  ls
+  322  vim main.tf 
+  323  ls
+  324  terraform init 
+  325  terraform apply --auto-approve 
+  326  terraform show 
+  327  cat main.tf 
+  328  ssh testadmin@20.124.232.153
+  329  ls
+  330  cd ..
+  331  ls
+  332  git add . ; git commit -m "07-AzureVM"; git push 
+  333  terraform destroy --auto-approve 
+  334  cd 08-Azure-VM-Public-IP/
+  335  terraform destroy --auto-approve 
+  336  ls
+  337  cd terraform-az-acc-2022-March-07/
+  338  ls
+  339  rm -rf terraform.tfstate 
+  340  ls
+  341  cp -rf 02-First-Deployment 09-Providers
+  342  ls
+  343  cd 09-Providers/
+  344  ls
+  345  rm  -rf History.txt terraform.tfstate* 
+  346  ls
+  347  mv second_deployment.tf resource.tf 
+  348  ls
+  349  vim resource.tf 
+  350  ls
+  351  cp -rf resource.tf provider.tf 
+  352  ls
+  353  vim resource.tf 
+  354  ls
+  355  vim provider.tf 
+  356  ls
+  357  terraform init 
+  358  terraform apply --auto-approve 
+  359  terraform destroy --auto-approve 
+  360  ls
+  361  vim terraform.tf 
+  362  ls -R .terraform
+  363  cat terraform.tf
+  364  terraform init 
+  365  rm -rf .terraform .terraform.lock.hcl 
+  366  ls
+  367  rm -rf terraform.tfstate
+  368  ls
+  369  rm terraform.tfstate.backup
+  370  ls
+  371  cat terraform.tf 
+  372  cat provider.tf 
+  373  cat resource.tf 
+  374  terraform init 
+  375  ls -R .terraform
+  376  rm -rf .terraform .terraform.lock.hcl 
+  377  ls
+  378  cd ..
+  379  ls
+  380  cd 09-Providers/
+  381  ls
+  382  mkdir exp1
+  383  mv * exp1/
+  384  ls
+  385  cp -rf exp1 exp2 
+  386  ls
+  387  cd exp2/
+  388  ls
+  389  vim terraform.tf 
+  390  terraform init 
+  391  cat provider.tf 
+  392  cat terraform.tf 
+  393  ls
+  394  cd ..
+  395  ls
+  396  mkdir Azure 
+  397  mv * Azure/
+  398  ls
+  399  mkdir AWS 
+  400  ls
+  401  cd AWS/
+  402  ls
+  403  mkdir exp1 
+  404  ls
+  405  cd exp1/
+  406  ls
+  407  cp -rf ../../../04-Multi-Cloud/main.tf . 
+  408  ls
+  409  vim main.tf 
+  410  ls
+  411  cp -rf main.tf provider.tf 
+  412  ls
+  413  vim main.tf 
+  414  ls
+  415  vim provider.tf 
+  416  ls
+  417  terraform init 
+  418  ls
+  419  terraform plan 
+  420  ls
+  421  ls -R .terraform
+  422  rm -rf .terraform .terraform.lock.hcl 
+  423  ls
+  424  cp -rf ../../Azure/exp2/terraform.tf . 
+  425  ls
+  426  cat provider.tf 
+  427  vim terraform.tf 
+  428  terraform init 
+  429  ls
+  430  cd ..
+  431  ls
+  432  cp -rf exp1 exp2 
+  433  ls
+  434  cd exp2/
+  435  ls
+  436  vim main.tf 
+  437  terraform plan 
+  438  vim main.tf 
+  439  cat provider.tf 
+  440  vim provider.tf 
+  441  terraform plan 
+  442  vim provider.tf 
+  443  terraform plan 
+  444  vim main.tf 
+  445  terraform plan 
+  446  terraform apply --auto-approve 
+  447  vim main.tf 
+  448  cat provider.tf 
+  449  vim main.tf 
+  450  terraform apply --auto-approve 
+  451  terraform show 
+  452  ls
+  453  cat provider.tf 
+  454  cat main.tf 
+  455  ls
+  456  cd ..
+  457  ls
+  458  cd ..
+  459  ls
+  460  git add . ; git commit -m "09-Providers"; git push 
+  461  cd - 
+  462  ls
+  463  cd AWS/exp2/
+  464  ls
+  465  terraform destroy --auto-approve 
+  466  ls
+  467  cd terraform-az-acc-2022-March-07/
+  468  ls
+  469  mkdir 10-Variables
+  470  cp -rf 09-Providers/Azure/exp1 10-Variables/
+  471  ls
+  472  cd 10-Variables/
+  473  ls
+  474  cd exp1/
+  475  ls
+  476  cat provider.tf 
+  477  cat terraform.tf 
+  478  ls
+  479  cat resource.tf 
+  480  vim resource.tf 
+  481  ls
+  482  vim variable.tf 
+  483  terraform init 
+  484  terraform plan 
+  485  ls
+  486  cat variable.tf 
+  487  TF_VAR_my_rg_name=foo terraform plan 
+  488  terraform plan TF_VAR_my_rg_name=fooRG TF_VAR_my_loc=westus
+  489  cat variable.tf 
+  490  terraform plan TF_VAR_my_rg_name=fooRG,TF_VAR_my_loc=westus
+  491  terraform plan TF_VAR_my_rg_name=fooRG TF_VAR_my_loc=westus
+  492  terraform plan -help
+  493  terraform plan -var my_rg_name=fooRG -var my_loc=westus
+  494  ls
+  495  cp -rf variable.tf uat.tfvars
+  496  vim uat.tfvars 
+  497  ls
+  498  cp -rf uat.tfvars prod.tfvars
+  499  vim prod.tfvars 
+  500  ls
+  501  terraform plan 
+  502  terraform plan -var my_rg_name=fooRG -var my_loc=westus
+  503  terraform plan -var-file=uat.tfvars 
+  504  terraform plan -var-file=prod.tfvars 
+  505  ls
+  506  cd ..
+  507  ls
+  508  mkdir exp2
+  509  ls
+  510  cp -rf exp1/provider.tf exp2/
+  511  cp -rf exp1/terraform.tf exp2/
+  512  ls
+  513  cd exp2/
+  514  ls
+  515  vim resource.tf 
+  516  ls
+  517  vim variables.tf 
+  518  ls
+  519  cat provider.tf 
+  520  cat terraform.tf 
+  521  ls
+  522  vim resource.tf 
+  523  ls
+  524  cat variables.tf 
+  525  cat resource.tf 
+  526  terraform init 
+  527  terraform plan 
+  528  ls
+  529  vim prod.tfvars
+  530  ls
+  531  terraform plan -var-file=prod.tfvars 
+  532  cat prod.tfvars 
+  533  ls
+  534  cat resource.tf 
+  535  cat variables.tf 
+  536  cat prod.tfvars 
+  537  vim resource.tf 
+  538  ls
+  539  vim variables.tf 
+  540  ls
+  541  vim prod.tfvars 
+  542  ls
+  543  mv prod.tfvars /root/
+  544  ls
+  545  mv prod.tfvars ~/
+  546  ls
+  547  terraform plan -var-file=~/prod.tfvars 
+  548  cd 
+  549  ls
+  550  pwd
+  551  cd - 
+  552  terraform plan -var-file=/home/amit/prod.tfvars 
+  553  ls
+  554  mv /home/amit/prod.tfvars . 
+  555  ls
+  556  history 
+  557  vim README.md 
+  558  ls
+  559  cd ..
+  560  ls
+  561  cd ..
+  562  ls
+  563  git add . ; git commit -m "10-Variables"; git push 
+  564  ls
+  565  cd terraform-az-acc-2022-March-07/
+  566  ls
+  567  mkdir 11-Outputs 
+  568  ls
+  569  cd 11-Outputs/
+  570  ls
+  571  cp -rf ../10-Variables/exp2/* . 
+  572  ls
+  573  vim output.tf 
+  574  ls
+  575  terraform init 
+  576  terraform apply --auto-approve 
+  577  terraform apply --auto-approve -var-file=prod.tfvars 
+  578  terraform refresh 
+  579  terraform refresh  -var-file=prod.tfvars 
+  580  cat output.tf 
+  581  terraform show 
+  582  terraform output 
+  583  terraform output my_vm_public_ip
+  584  vim terraform.tfstate
+  585  ls
+  586  cd ..
+  587  ls
+  588  git add . ; git commit -m "10-Variables"; git push 
+  589  history 
+  590  history > History.txt 
