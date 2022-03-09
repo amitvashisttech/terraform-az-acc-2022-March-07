@@ -1,0 +1,46 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] azurerm_network_interface.example_rg (expand)" [label = "azurerm_network_interface.example_rg", shape = "box"]
+		"[root] azurerm_network_security_group.examplensg (expand)" [label = "azurerm_network_security_group.examplensg", shape = "box"]
+		"[root] azurerm_public_ip.examplepublicip (expand)" [label = "azurerm_public_ip.examplepublicip", shape = "box"]
+		"[root] azurerm_resource_group.example_rg (expand)" [label = "azurerm_resource_group.example_rg", shape = "box"]
+		"[root] azurerm_subnet.internal (expand)" [label = "azurerm_subnet.internal", shape = "box"]
+		"[root] azurerm_virtual_machine.example_rg (expand)" [label = "azurerm_virtual_machine.example_rg", shape = "box"]
+		"[root] azurerm_virtual_network.example_rg (expand)" [label = "azurerm_virtual_network.example_rg", shape = "box"]
+		"[root] output.my_vm_public_IP" [label = "output.my_vm_public_IP", shape = "note"]
+		"[root] output.pip" [label = "output.pip", shape = "note"]
+		"[root] provider[\"registry.terraform.io/hashicorp/azurerm\"]" [label = "provider[\"registry.terraform.io/hashicorp/azurerm\"]", shape = "diamond"]
+		"[root] var.admin_password" [label = "var.admin_password", shape = "note"]
+		"[root] var.admin_username" [label = "var.admin_username", shape = "note"]
+		"[root] var.managed_disk_type" [label = "var.managed_disk_type", shape = "note"]
+		"[root] var.my_loc" [label = "var.my_loc", shape = "note"]
+		"[root] var.my_rg_name" [label = "var.my_rg_name", shape = "note"]
+		"[root] var.my_vm_count" [label = "var.my_vm_count", shape = "note"]
+		"[root] var.vm_size" [label = "var.vm_size", shape = "note"]
+		"[root] azurerm_network_interface.example_rg (expand)" -> "[root] azurerm_public_ip.examplepublicip (expand)"
+		"[root] azurerm_network_interface.example_rg (expand)" -> "[root] azurerm_subnet.internal (expand)"
+		"[root] azurerm_network_security_group.examplensg (expand)" -> "[root] azurerm_resource_group.example_rg (expand)"
+		"[root] azurerm_public_ip.examplepublicip (expand)" -> "[root] azurerm_resource_group.example_rg (expand)"
+		"[root] azurerm_public_ip.examplepublicip (expand)" -> "[root] var.my_vm_count"
+		"[root] azurerm_resource_group.example_rg (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/azurerm\"]"
+		"[root] azurerm_resource_group.example_rg (expand)" -> "[root] var.my_loc"
+		"[root] azurerm_resource_group.example_rg (expand)" -> "[root] var.my_rg_name"
+		"[root] azurerm_subnet.internal (expand)" -> "[root] azurerm_virtual_network.example_rg (expand)"
+		"[root] azurerm_virtual_machine.example_rg (expand)" -> "[root] azurerm_network_interface.example_rg (expand)"
+		"[root] azurerm_virtual_machine.example_rg (expand)" -> "[root] var.admin_password"
+		"[root] azurerm_virtual_machine.example_rg (expand)" -> "[root] var.admin_username"
+		"[root] azurerm_virtual_machine.example_rg (expand)" -> "[root] var.managed_disk_type"
+		"[root] azurerm_virtual_machine.example_rg (expand)" -> "[root] var.vm_size"
+		"[root] azurerm_virtual_network.example_rg (expand)" -> "[root] azurerm_resource_group.example_rg (expand)"
+		"[root] output.my_vm_public_IP" -> "[root] azurerm_public_ip.examplepublicip (expand)"
+		"[root] output.pip" -> "[root] azurerm_public_ip.examplepublicip (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/azurerm\"] (close)" -> "[root] azurerm_network_security_group.examplensg (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/azurerm\"] (close)" -> "[root] azurerm_virtual_machine.example_rg (expand)"
+		"[root] root" -> "[root] output.my_vm_public_IP"
+		"[root] root" -> "[root] output.pip"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/azurerm\"] (close)"
+	}
+}
+
