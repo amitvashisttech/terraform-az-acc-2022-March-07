@@ -24,6 +24,7 @@ resource "azurerm_subnet" "internal" {
 }
 
 resource "azurerm_network_interface" "example_rg" {
+  #count               = "${var.my_vm_count}"
   count               = var.my_vm_count
   name                = "${var.my_rg_name}-nic-${count.index}"
   location            = azurerm_resource_group.example_rg.location
