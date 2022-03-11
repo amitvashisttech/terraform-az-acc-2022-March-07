@@ -197,7 +197,7 @@ resource "null_resource" "local" {
       echo "[ansible-ci]"|tee -a ansible-ci.ini;
       export ANSIBLE_HOST_KEY_CHECKING=False;
       echo "${azurerm_linux_virtual_machine.myterraformvm.public_ip_address}"|tee -a ansible-ci.ini;
-      ansible-playbook --key-file=${var.pvt_key} -i ansible-ci.ini -u ubuntu ./ansible-code/webserver.yaml -v 
+      ansible-playbook --key-file=${var.pvt_key} -i ansible-ci.ini -u amitvashist ./ansible-code/webserver.yaml -v 
     EOT
    }
 
