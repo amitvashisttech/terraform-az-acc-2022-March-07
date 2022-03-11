@@ -1,0 +1,15 @@
+3.145.138.1 ansible_python_interpreter=/usr/bin/python3
+3.137.194.4 ansible_python_interpreter=/usr/bin/python3
+
+
+
+[web]
+3.145.138.1 ansible_python_interpreter=/usr/bin/python3
+3.137.194.4 ansible_python_interpreter=/usr/bin/python3
+
+
+
+
+[web:vars]
+ansible_ssh_user=ubuntu
+ansible_ssh_private_key_file="/home/amitvashist7/.ssh/amitvashist-terraform.pem"
