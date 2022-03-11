@@ -15,7 +15,7 @@ resource "azurerm_resource_group" "example_rg_red" {
 
  tags = { 
   owner = "Amit Vashist"
-  # team  = "DevOps"
+  team  = "DevOps"
   project = "Automation"
   }
 }
